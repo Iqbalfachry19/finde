@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrations:generate": "drizzle-kit generate:pg",
-    "migrations:push": "drizzle-kit push:pg",
+    "migrations:generate": "drizzle-kit generate",
+    "migrations:push": "drizzle-kit push",
     "migrations:drop": "drizzle-kit drop --config=drizzle.config.ts"
   },
   "dependencies": {
@@ -16,7 +16,7 @@
     "@splinetool/loader": "^1.0.51",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.2",
-    "drizzle-orm": "^0.29.5",
+    "drizzle-orm": "^0.31.2",
     "framer-motion": "^11.0.3",
     "http-proxy-middleware": "^3.0.0",
     "lucide-react": "^0.323.0",
@@ -35,7 +35,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "drizzle-kit": "^0.22.6",
+    "drizzle-kit": "^0.22.7",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",

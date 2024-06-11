@@ -1,20 +1,15 @@
 import "dotenv/config";
-import { drizzle } from "drizzle-orm/mysql2";
+import { drizzle } from "drizzle-orm/postgres-js";
 import * as schema from "@/db/schema";
 import { eq, and, desc } from "drizzle-orm";
 import { laptops, detail } from "@/db/schema";
-import mysql from "mysql2/promise";
+import postgres from "postgres";
 
 const connectionString = process.env.DB_URL!;
-let client: mysql.Connection;
-let db: any;
 
-async function initializeDatabase() {
-  if (!client) {
-    client = await mysql.createConnection(connectionString);
-    db = drizzle(client, { schema, mode: 'default' });
-  }
-}
+// Disable prefetch as it is not supported for "Transaction" pool mode
+export const client = postgres(connectionString, { prepare: false });
+export const db = drizzle(client, { schema });
 
 export async function getLaptop({
   pekerjaan,
@@ -27,7 +22,6 @@ export async function getLaptop({
   jenis_laptop: string;
   processor: string;
 }) {
-  await initializeDatabase();
   const result = await db
     .select()
     .from(laptops)
@@ -46,7 +40,6 @@ export async function getLaptop({
 }
 
 export async function getDetail(id: number) {
-  await initializeDatabase();
   const result = await db.select().from(detail).where(eq(detail.id, id));
 
   return result;
