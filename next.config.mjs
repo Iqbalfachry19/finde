@@ -7,6 +7,10 @@ const nextConfig = {
       {
         source: '/admin/finderlaptop',
         destination: 'https://carilaptops.cloud/findlaptop.php' // Proxy to Backend
+      },
+         {
+        source: '/admin/get_laptop.php',
+        destination: 'https://carilaptops.cloud/get_laptop.php' // Proxy to Backend
       }
     ];
   }
