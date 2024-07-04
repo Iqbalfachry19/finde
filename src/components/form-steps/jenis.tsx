@@ -9,14 +9,14 @@ const options = [
     id: "traditional",
     label: "Tradisional",
     imgSrc: "traditional.svg",
-    occupations: ["mahasiswa", "pekerja-kantoran", "professional"],
+    occupations: ["mahasiswa", "pekerja-kantoran", "professional", "others"],
     usage: ["daily-use", "multimedia", "gaming"],
   },
   {
     id: "2in1-laptop",
     label: "2-in-1 Laptop",
     imgSrc: "2in1.svg",
-    occupations: ["mahasiswa", "professional"],
+    occupations: ["mahasiswa", "professional", "others"],
     usage: ["multimedia"],
   },
   {

@@ -9,13 +9,13 @@ const options = [
     id: "daily-use",
     label: "Penggunaan Harian",
     imgSrc: "daily.svg",
-    occupations: ["mahasiswa", "pekerja-kantoran"],
+    occupations: ["mahasiswa", "pekerja-kantoran", "others"],
   },
   {
     id: "multimedia",
     label: "Multimedia",
     imgSrc: "multimedia.svg",
-    occupations: ["mahasiswa", "professional"],
+    occupations: ["mahasiswa", "professional", "others"],
   },
   {
     id: "gaming",

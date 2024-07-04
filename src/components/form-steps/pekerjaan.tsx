@@ -20,6 +20,11 @@ const options = [
     label: "Professional",
     imgSrc: "pro.svg",
   },
+  {
+    id: "others",
+    label: "Others",
+    imgSrc: "others.svg",
+  },
 ];
 
 export function Pekerjaan() {
