@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { cookies } from "next/headers";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,15 +20,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = cookies();
+  const theme = cookieStore.get("theme")?.value || "dark";
   return (
-    <html lang="en">
+    <html lang="en" className={theme === "dark" ? "dark" : ""}>
       <body
         className={cn(
-          "min-h-screen font-sans antialiased grainy bg-[#1f1e2e]",
+          "min-h-screen font-sans antialiased grainy bg-[#1f1e2e] dark:bg-gray-200 dark:text-black",
           inter.className
         )}
       >
+        <ThemeToggle />
+
         <Nav />
+
         {children}
         <Footer />
       </body>
